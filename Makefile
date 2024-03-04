@@ -13,7 +13,14 @@ run: all
 #Etudiants : creez les cibles de votre makefile ICI, et completez
 audisen_sim.out: audisen_sim.c
 	gcc audisen_sim.c -o audisen_sim.out
-
+ams.o: ams.c ams.h
+	gcc -Wall -c ams.c -o ams.o
+amp.o: amp.c amp.h
+	gcc -Wall -c amp.c -o amp.o
+frame.o: frame.c frame.h
+	gcc -Wall -c frame.c -o frame.o
+usb.o: usb.c usb.h
+	gcc -Wall -c frame.c -o frame.o
 
 
 #CIBLE a garder pour la partie USB
