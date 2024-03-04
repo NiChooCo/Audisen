@@ -11,8 +11,8 @@ run: all
 	@./$(TARGET)
 
 #Etudiants : creez les cibles de votre makefile ICI, et completez
-audisen_sim.out: audisen_sim.c
-	gcc audisen_sim.c -o audisen_sim.out
+audisen_sim.out: audisen_sim.c amp.o ams.o frame.o
+	gcc audisen_sim.c amp.o ams.o frame.o -o audisen_sim.out
 ams.o: ams.c ams.h
 	gcc -Wall -c ams.c -o ams.o
 amp.o: amp.c amp.h
