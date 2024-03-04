@@ -4,6 +4,7 @@
 
 #include "define.h"
 #include "amp.h"
+#include <ctype.h>
 
 
 FILE* initAMP(char* filename){
@@ -22,8 +23,18 @@ FILE* initAMP(char* filename){
 
 
 
+/*void readAMP(FILE* pf, char * song_filename){
+    while(fgets(song_filename, MAX_SONGNAME_SIZE, pf)!=NULL){
+        fgets(song_filename, MAX_SONGNAME_SIZE, pf);
+        printf("%s", song_filename);
+    }
+}*/
 void readAMP(FILE* pf, char * song_filename){
-
+    fgets(song_filename, MAX_SONGNAME_SIZE, pf);
+    for (int i = 0; i < strlen(song_filename); ++i) {
+        song_filename[i] = (char)tolower((int)song_filename[i]);
+    }
+    printf("%s\n", song_filename);
 }
 
 void closeAMP(FILE* pf){
