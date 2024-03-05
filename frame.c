@@ -12,9 +12,27 @@
 
 
 void createInitFrame(s_song mySong, char* frame){
-	
+    char content[INIT_FRAME_MAX_SIZE];
+    sprintf(content, "%s,%d,%d", mySong.title, mySong.tpm*2, mySong.nTicks);
+    int checksum = 0;
+    int i = 0;
+    while (content[i] != '\0') {
+        checksum ^= content[i];
+        i++;
+    }
+    sprintf(frame, "#%s*%02x\r\n", content, checksum);
+    printf("%s", frame);
 }
 
 void createTickFrame(s_tick myTick, char* frame){
-
+    char content[INIT_FRAME_MAX_SIZE];
+    sprintf(content, "0,%d,%d,%d,%d,%d", myTick.accent, myTick.note[0], myTick.note[1], myTick.note[2], myTick.note[3]);
+    int checksum = 0;
+    int i = 0;
+    while (content[i] != '\0') {
+        checksum ^= content[i];
+        i++;
+    }
+    sprintf(frame, "#%s*%02x\r\n", content, checksum);
+    printf("%s", frame);
 }
