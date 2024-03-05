@@ -27,15 +27,48 @@ s_song readAMS(char* fileName){
 		char line[MAX_SIZE_LINE];
 		fgets(line , TMP_MAX, songFile);
 		mySong.tpm = atoi(line);
-		for (int i = 0; i < MAX_NUMBER_TICKS; ++i) {
-			fgets(line, MAX_SIZE_LINE, songFile);
-			for (int j = 0; j < MAX_SIZE_LINE; ++j) {
+        fgets(line, MAX_SIZE_LINE, songFile); //enlève les 2 premières lignes
+        fgets(line, MAX_SIZE_LINE, songFile);
+        int nb_lignes = 0;
+        int i = 0;
+        while(fgets(line, MAX_SIZE_LINE, songFile) != NULL){
 
-			}
-		}
-	}
+            //for (int i = 0; i < MAX_NUMBER_TICKS; ++i) {
+
+            int pipe = 0;
+            nb_lignes+=1;
+            mySong.tickTab[i].accent = 0;
+            int note_index = 0;
+            //fgets(line, MAX_SIZE_LINE, songFile);
+            for (int j = 0; j < MAX_SIZE_LINE; ++j) {
+                if (line[j] == '|') {
+                    pipe += 1;
+                    if (line[j + 1] == '^' || line[j + 1] == 'x') {
+                        mySong.tickTab[i].note[note_index] = pipe;
+                        note_index += 1;
+                    }
+                }
+                if (line[j] == '^') {
+                    mySong.tickTab[i].accent = 1;
+                }
+            }
+            printf("Accent : %d\n", mySong.tickTab[i].accent);
+            for (int j = 0; j < 4; ++j) {
+                printf("%d ", mySong.tickTab[i].note[j]);
+            }
+            printf("\n");
+            i+=1;
+            //printf("%d\n", nb_lignes);
+        }
+
+    }
+
+
+    //printf("%d\n", nb_lignes);
+
 	printf("Titre : %s", mySong.title);
-	printf("Tempo : %d", mySong.tpm * 2);
+	printf("Tick par minute : %d\n", mySong.tpm);
+    printf("%d", mySong.tickTab[14].note[2]);
 	return mySong;
 }
 
