@@ -25,7 +25,7 @@ FILE* initAMP(char* filename){
 
 void readAMP(FILE* pf, char * song_filename){
     fgets(song_filename, MAX_SONGNAME_SIZE, pf);
-    int count = strlen(song_filename);
+    int count = (int)strlen(song_filename);
     for (int i = 0; i < count; ++i) {
         song_filename[i] = (char)tolower((int)song_filename[i]);
         if(!(isalpha((int) song_filename[i]))){
