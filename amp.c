@@ -30,7 +30,6 @@ void readAMP(FILE* pf, char * song_filename){
         song_filename[i] = (char)tolower((int)song_filename[i]);
         if(!(isalpha((int) song_filename[i]))){
             song_filename[i] = '_';
-            //printf("|%c|", song_filename[i-1]);
             if(song_filename[i-1] == '_'){
                 for(int j = i; j < count; j++){
                     song_filename[j] = song_filename[j+1];

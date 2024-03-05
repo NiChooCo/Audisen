@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "amp.h"
+#include "ams.h"
 
 
 int main(){
@@ -13,6 +14,7 @@ int main(){
     playlist = initAMP("ma_playlist.amp");
     readAMP(playlist, titre);
     closeAMP(playlist);
+    readAMS("bohemian_rhapsody.ams");
 
     return 0;
 }
