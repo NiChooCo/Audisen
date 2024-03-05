@@ -28,6 +28,7 @@ s_song readAMS(char* fileName){
 		fgets(line , TMP_MAX, songFile);
 		mySong.tpm = atoi(line);
 		for (int i = 0; i < MAX_NUMBER_TICKS; ++i) {
+			fgets(line, MAX_SIZE_LINE, songFile);
 			for (int j = 0; j < MAX_SIZE_LINE; ++j) {
 
 			}
