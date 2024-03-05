@@ -33,8 +33,8 @@ s_song readAMS(char* fileName){
 			}
 		}
 	}
-	printf("%s", mySong.title);
-	printf("%d", mySong.tpm);
+	printf("Titre : %s", mySong.title);
+	printf("Tempo : %d", mySong.tpm * 2);
 	return mySong;
 }
 

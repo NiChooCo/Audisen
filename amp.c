@@ -46,6 +46,6 @@ void readAMP(FILE* pf, char * song_filename){
 void closeAMP(FILE* pf){
     if(pf){
         fclose(pf);
-        printf("Fichier trouvé, et fermé !\n");
+        printf("Fichier trouvé, et fermé !\n\n");
     }
 }

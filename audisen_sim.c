@@ -8,13 +8,13 @@
 
 
 int main(){
-    printf("Demarrage du projet AUDISEN\n");
+    printf("Démarrage du projet AUDISEN\n");
     FILE * playlist = NULL;
     char *titre;
     playlist = initAMP("ma_playlist.amp");
     readAMP(playlist, titre);
     closeAMP(playlist);
     readAMS("bohemian_rhapsody.ams");
-
+    printf("\n");
     return 0;
 }
