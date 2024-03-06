@@ -70,7 +70,7 @@ void testReadAMS(){
 		fgets(title,MAX_SIZE_TITLE,pf);
 		title[strlen(title)-1]='\0';
 		fscanf(pf,"%d",&tpm);
-		//printf("%s %d",title,tpm);
+		printf("%s %d",title,tpm);
 		if(strcmp(title,mySong.title)==0){
 			cpt++;
 		}
@@ -264,7 +264,7 @@ void testFrame() {
 
 }
 
-void testCreateAMS(){
+/*void testCreateAMS(){
 	FILE* pf1=NULL;
 	FILE* pf2=NULL;
 	int nCorrectLines= 0;
@@ -309,4 +309,4 @@ void testCreateAMS(){
 	}
    printAutoTestsResults("CreateAMS",mark,coeff,2);
 
-}
+}*/
