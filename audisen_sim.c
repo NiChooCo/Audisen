@@ -6,7 +6,6 @@
 #include "amp.h"
 #include "ams.h"
 #include "frame.h"
-#include "autotests.h"
 
 
 int main(){

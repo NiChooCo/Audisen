@@ -54,13 +54,11 @@ s_song readAMS(char* fileName){
             }
             printf("\n");
             i+=1;
-            //printf("%d\n", nb_lignes);
         }
 
     }
 
 
-    //printf("%d\n", nb_lignes);
 
 	printf("Titre : %s", mySong.title);
 	printf("Tick par minute : %d\n", mySong.tpm);
@@ -70,6 +68,12 @@ s_song readAMS(char* fileName){
 
 
 void createAMS(char* txtFileName, char* amsFileName){
-    FILE * songFile;
-    songFile = fopen(txtFileName, "r");
+
+    FILE * myBook;
+    myBook = fopen(txtFileName, "r");
+    char line[MAX_SIZE_LINE];
+    fgets(title, MAX_SIZE_LINE, myBook);
+
+    fclose(myBook);
+
 }
