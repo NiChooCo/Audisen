@@ -28,19 +28,26 @@ void readAMP(FILE* pf, char * song_filename){
     int count = (int)strlen(song_filename);
     for (int i = 0; i < count; ++i) {
         song_filename[i] = (char)tolower((int)song_filename[i]);
-        if(!(isalpha((int) song_filename[i]))){
-            song_filename[i] = '_';
-            if(song_filename[i-1] == '_'){
-                for(int j = i; j < count; j++){
-                    song_filename[j] = song_filename[j+1];
-                    song_filename[j] = (char)tolower((int)song_filename[j]);
+        if(song_filename[i] != '\n' && song_filename[i] != '\r'){
+            if(!(isalpha((int) song_filename[i]))){
+                song_filename[i] = '_';
+                if(song_filename[i-1] == '_'){
+                    for(int j = i; j < count; j++){
+                        song_filename[j] = song_filename[j+1];
+                        song_filename[j] = (char)tolower((int)song_filename[j]);
+                    }
+                    count -= 1;
+                    i-=1;
                 }
-                count -= 1;
-                i-=1;
             }
         }
+        else{
+            song_filename[i] = '\0';
+        }
     }
-    printf("%s\n", song_filename);
+    //song_filename[strlen(song_filename)]='\0';
+    strcat(song_filename, ".ams");
+    //printf("%s\n", song_filename);
 }
 
 void closeAMP(FILE* pf){

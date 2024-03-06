@@ -32,14 +32,10 @@ s_song readAMS(char* fileName){
         int nb_lignes = 0;
         int i = 0;
         while(fgets(line, MAX_SIZE_LINE, songFile) != NULL){
-
-            //for (int i = 0; i < MAX_NUMBER_TICKS; ++i) {
-
             int pipe = 0;
             nb_lignes+=1;
             mySong.tickTab[i].accent = 0;
             int note_index = 0;
-            //fgets(line, MAX_SIZE_LINE, songFile);
             for (int j = 0; j < MAX_SIZE_LINE; ++j) {
                 if (line[j] == '|') {
                     pipe += 1;
@@ -74,6 +70,6 @@ s_song readAMS(char* fileName){
 
 
 void createAMS(char* txtFileName, char* amsFileName){
-
-
+    FILE * songFile;
+    songFile = fopen(txtFileName, "r");
 }

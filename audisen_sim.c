@@ -6,6 +6,7 @@
 #include "amp.h"
 #include "ams.h"
 #include "frame.h"
+#include "autotests.h"
 
 
 int main(){
@@ -13,9 +14,13 @@ int main(){
     FILE * playlist = NULL;
     char *titre;
     playlist = initAMP("ma_playlist.amp");
-    readAMP(playlist, titre);
-    closeAMP(playlist);
-    readAMS("bohemian_rhapsody.ams");
-    printf("\n");
+    //readAMP(playlist, titre);
+    //closeAMP(playlist);
+    //readAMS("bohemian_rhapsody.ams");
+    //printf("\n");
+    //testCreateAMS();
+    testFrame();
+    //testReadAMP();
+    //testReadAMS();
     return 0;
 }
