@@ -6,7 +6,11 @@
 #include "amp.h"
 #include <ctype.h>
 
-
+/**
+ *
+ * @param filename nom du fichier amp
+ * @return les valeurs contenues dans le fichier amp de base, dans une variable (ici pf)
+ */
 FILE* initAMP(char* filename){
     FILE * pf = NULL;
     pf = fopen(filename, "r");
@@ -22,7 +26,11 @@ FILE* initAMP(char* filename){
 }
 
 
-
+/**
+ *
+ * @param pf variable contenant les valeurs dans le fichier amp après avoir utilisé initAMP
+ * @param song_filename variable contenant le titre récupéré dans l'amp, ce titre va permettre le readAMS par la suite
+ */
 void readAMP(FILE* pf, char * song_filename){
     fgets(song_filename, MAX_SONGNAME_SIZE, pf);
     int count = (int)strlen(song_filename);
@@ -50,6 +58,10 @@ void readAMP(FILE* pf, char * song_filename){
     //printf("%s\n", song_filename);
 }
 
+/**
+ *
+ * @param pf fichier à fermer
+ */
 void closeAMP(FILE* pf){
     if(pf){
         fclose(pf);

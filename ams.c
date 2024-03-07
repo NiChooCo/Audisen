@@ -5,7 +5,11 @@
 #include "define.h"
 #include "ams.h"
 
-
+/** Permet de lire le fichier ams d'un titre
+ *
+ * @param fileName titre de son dont on va lire l'ams
+ * @return
+ */
 s_song readAMS(char* fileName){
 	s_song mySong;
 	FILE * songFile;

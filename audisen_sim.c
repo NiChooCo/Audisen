@@ -8,7 +8,11 @@
 #include "frame.h"
 #include "autotests.h"
 
-
+/** Permet de créer un fichier frm avec les frames des morceaux
+ *
+ * @param playlist_amp nom du fichier amp à lire, va etre utilisé pour récupérer les titres pour pouvoir faire un readAMS après
+ * @param playlist_frm fichier frm qui va être crée dans lequel les frames vont être écrites
+ */
 void create_frm(char * playlist_amp, char * playlist_frm){
     FILE * amp = NULL;
     FILE * frm = NULL;

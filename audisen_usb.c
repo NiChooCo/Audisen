@@ -9,6 +9,11 @@
 #include "ams.h"
 #include "frame.h"
 
+/** Permet de convertir un fichier frm pour qu'il soit transféré via usb à la carte
+ *
+ * @param playlist_name nom du fichier amp pour pouvoir récupérer le titre puis faire le readAMS pour ensuite pouvoir créer les frames
+ * @param ftHandle instance de la carte
+ */
 void frame_to_usb(char * playlist_name, FT_HANDLE ftHandle){
 
     FILE * playlist = NULL;

@@ -8,6 +8,10 @@
 #include "usb.h"
 
 
+/** Permet d'initialiser la carte et créer une instance
+ *
+ * @return
+ */
 FT_HANDLE initUSB() {
     FT_HANDLE ftHandle;
     FT_STATUS ftStatus;
@@ -59,12 +63,19 @@ FT_HANDLE initUSB() {
     return ftHandle;
 }
 
-
+/** Permet de fermer l'instance
+ *
+ * @param ftHandle instance
+ */
 void closeUSB(FT_HANDLE ftHandle){
     FT_Close(ftHandle);
 }
 
-
+/** Permet de transférer les frames à la carte pour jouer le morceau
+ *
+ * @param frame la frame qui va être envoyée à la carte
+ * @param ftHandle l'instance
+ */
 void writeUSB(char* frame, FT_HANDLE ftHandle){
     FT_STATUS ftStatus;
     DWORD bytesWritten;
