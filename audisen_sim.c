@@ -18,7 +18,7 @@ void create_frm(char * playlist_amp, char * playlist_frm){
         exit(0);
     }
     s_song mySong;
-    char frm_titre[INIT_FRAME_MAX_SIZE];
+    char frm_titre[MAX_SIZE_TITLE];
     char frm_tick[TICK_FRAME_SIZE];
     char titre[MAX_SONGNAME_SIZE];
     amp = initAMP(playlist_amp);
@@ -50,6 +50,6 @@ int main(){
     //testFrame();
     //testReadAMP();
     //testReadAMS();
-    create_frm("Playlist.amp", "Playlist.frm");
+    create_frm("ma_playlist.amp", "Playlist.frm");
     return 0;
 }
