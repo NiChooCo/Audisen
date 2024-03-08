@@ -8,7 +8,7 @@
 
 /** Permet de lire le fichier ams d'un titre
  *
- * @param fileName titre de son dont on va lire l'ams
+ * @param fileName titre du son dont on va lire l'ams
  * @return
  */
 s_song readAMS(char* fileName){
@@ -30,9 +30,10 @@ s_song readAMS(char* fileName){
     }
     else{
         fgets(mySong.title, MAX_SONGNAME_SIZE, songFile);
+        mySong.title[strlen(mySong.title) -1]='\0';
         char line[MAX_SIZE_LINE];
         fgets(line , TMP_MAX, songFile);
-        mySong.tpm = atoi(line);
+        mySong.tpm = atoi(line)*2;
         fgets(line, MAX_SIZE_LINE, songFile); //enlève les 2 premières lignes
         fgets(line, MAX_SIZE_LINE, songFile);
         int nb_lignes = 0;
@@ -54,14 +55,16 @@ s_song readAMS(char* fileName){
                     mySong.tickTab[i].accent = 1;
                 }
             }
-            /*printf("Accent : %d\n", mySong.tickTab[i].accent);
+            printf("Accent : %d\n", mySong.tickTab[i].accent);
             for (int j = 0; j < 4; ++j) {
-                printf("%d ", mySong.tickTab[i].note[j]);
+                //printf("%d ", mySong.tickTab[i].note[j]);
             }
-            printf("\n");*/
             i+=1;
         }
         mySong.nTicks = nb_lignes;
+        //printf("%s\n", mySong.title);
+        //printf("\n");
+        //printf("tpm : %d\n", mySong.tpm);
     }
 
 
@@ -333,7 +336,10 @@ void createAMS(char* txtFileName, char *amsFileName){
 
 
 
-        printf("\n");
+        //printf("\n");
+        if(nTick == 16)
+            fprintf(myWrite, "|");
+        else
         fprintf(myWrite, "|\n");
     }
 

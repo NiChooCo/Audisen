@@ -18,7 +18,7 @@ FILE* initAMP(char* filename){
         printf("Erreur ! Fichier non trouvé !\n");
     }
     else{
-        printf("Fichier trouvé !\n");
+        printf("Fichier amp trouvé !\n");
         return pf;
     }
    
@@ -55,7 +55,7 @@ void readAMP(FILE* pf, char * song_filename){
     }
     //song_filename[strlen(song_filename)]='\0';
     strcat(song_filename, ".ams");
-    //printf("%s\n", song_filename);
+    printf("%s\n", song_filename);
 }
 
 /**
