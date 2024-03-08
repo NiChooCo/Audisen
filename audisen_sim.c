@@ -50,8 +50,8 @@ int main(){
     //closeAMP(playlist);
     //readAMS("bohemian_rhapsody.ams");
     //printf("\n");
-    //testCreateAMS();
-    testFrame();
+    testCreateAMS();
+    //testFrame();
     //testReadAMP();
     //testReadAMS();
     //create_frm("ma_playlist.amp", "Playlist.frm");

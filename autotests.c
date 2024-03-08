@@ -264,7 +264,7 @@ void testFrame() {
 
 }
 
-/*void testCreateAMS(){
+void testCreateAMS(){
 	FILE* pf1=NULL;
 	FILE* pf2=NULL;
 	int nCorrectLines= 0;
@@ -309,4 +309,4 @@ void testFrame() {
 	}
    printAutoTestsResults("CreateAMS",mark,coeff,2);
 
-}*/
+}
