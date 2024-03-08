@@ -51,9 +51,11 @@ int main(){
     //readAMS("bohemian_rhapsody.ams");
     //printf("\n");
     //testCreateAMS();
-    //testFrame();
+    testFrame();
     //testReadAMP();
     //testReadAMS();
-    create_frm("ma_playlist.amp", "Playlist.frm");
+    //create_frm("ma_playlist.amp", "Playlist.frm");
+    //createAMS("bohemian_rhapsody.txt", "bohemian_pour_create.ams");
+
     return 0;
 }
